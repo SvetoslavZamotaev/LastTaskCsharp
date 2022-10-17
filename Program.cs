@@ -22,4 +22,17 @@ string MakeRandomWords(int length)
     string resu = new string(result);
     return resu;
 }
-Console.WriteLine(MakeRandomWords(8));
+string AddNumInWord(string letters)
+{
+    char[] number = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+    char[] chars = letters.ToCharArray();
+    int pos = new Random().Next(0, 9);
+    int len = letters.Length;
+    int posChars = new Random().Next(0, len);
+    chars[posChars] = number[pos];
+    string result = new string(chars);
+    return result;
+}
+
+Console.WriteLine(AddNumInWord(MakeRandomWords(7)));
+
