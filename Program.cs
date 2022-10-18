@@ -33,6 +33,23 @@ string AddNumInWord(string letters)
     string result = new string(chars);
     return result;
 }
+string RemoveNum(string stroke)
+{
+    int len = stroke.Length;
+    char[] charArr = stroke.ToCharArray();
+    for (int i = 0; i < len; i++)
+    {
+        if (charArr[i] < 97) stroke = stroke.Remove(i, 1);
 
-Console.WriteLine(AddNumInWord(MakeRandomWords(7)));
+    }
+    // string res = stroke;
+    return stroke;
+}
+
+string[] array = new string[10];
+for (int i = 0; i < array.Length; i++)
+{
+    array[i] = AddNumInWord(MakeRandomWords(7));
+    Console.WriteLine($"Случайное выражение - {array[i]} , его преобразование {RemoveNum(array[i])}");
+}
 
